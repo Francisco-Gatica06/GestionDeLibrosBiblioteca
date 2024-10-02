@@ -59,8 +59,12 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    public boolean prestar() {
-
+    public boolean prestar(String ISBN) {
+        if (libro.getCantidadDisponible() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean devolver() {

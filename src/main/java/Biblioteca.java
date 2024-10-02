@@ -10,16 +10,29 @@ public class Biblioteca {
         this.libros = new ArrayList<>();
     }
 
+    // Primero ver que ese libro no exista, si existe aumentarlo en 1.
     public boolean agregarLibro(Libro libro) {
-
+        return true;
     }
 
-    public void mostrarLibrosDisponibles() {
-
+    // Revisar
+    public void mostrarLibrosDisponibles(boolean disponible) {
+        for(Libro libro : this.libros) {
+            if(libro.disponible == true) {
+                System.out.println(libro.toString());
+            }
+        }
     }
 
-    public String buscarLibroPorTitulo() {
-
+    // Revisar
+    public List buscarLibroPorTitulo(String titulo) {
+        ArrayList<Libro> librosTitulo = new ArrayList<>();
+        for(Libro libro : this.libros) {
+            if(libro.getTitulo().equals(titulo)) {
+                librosTitulo.add(libro);
+            }
+        }
+        return librosTitulo;
     }
 
 }
