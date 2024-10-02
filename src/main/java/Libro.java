@@ -60,15 +60,11 @@ public class Libro {
     }
 
     public boolean prestar(String ISBN) {
-        if (libro.getCantidadDisponible() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
 
     public boolean devolver() {
-
+        return true;
     }
 
     @Override

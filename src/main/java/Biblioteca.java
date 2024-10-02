@@ -18,7 +18,7 @@ public class Biblioteca {
     // Revisar
     public void mostrarLibrosDisponibles(boolean disponible) {
         for(Libro libro : this.libros) {
-            if(libro.disponible == true) {
+            if(libro.disponible) {
                 System.out.println(libro.toString());
             }
         }
