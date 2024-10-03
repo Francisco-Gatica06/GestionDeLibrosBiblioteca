@@ -55,12 +55,17 @@ public class Libro {
         this.cantidadDisponible = cantidadDisponible;
     }
 
+    public boolean getDisponible() {
+        return disponible;
+    }
+
     public void setDisponible (boolean disponible) {
         this.disponible = disponible;
     }
 
     public boolean prestar(String ISBN) {
-        return true;
+        boolean prestar = true;
+        if()
     }
 
     public boolean devolver() {
