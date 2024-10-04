@@ -12,10 +12,14 @@ public class Biblioteca {
 
     // Primero ver que ese libro no exista, si existe aumentarlo en 1.
     public boolean agregarLibro(Libro libro) {
-
         return true;
     }
 
+    public boolean agregarLibro(String titulo, String autor, String genero, String ISBN, int cantidadDisponible, boolean disponible) {
+        return true;
+    }
+
+    // Revisar
     public Libro buscarLibro(String ISBN, String titulo) {
         for(Libro libro : this.libros) {
             if(libro.getISBN().equals(ISBN) && libro.getTitulo().equals(titulo)) {
