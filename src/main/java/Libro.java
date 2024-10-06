@@ -63,26 +63,22 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    public boolean prestar() {
+    public void prestar() {
         if(getDisponible()) {
             setCantidadDisponible(getCantidadDisponible() - 1);
             if (getCantidadDisponible() == 0) {
                 setDisponible(false);
             }
-            return true;
-        } else {
-            return false;
         }
     }
 
-    public boolean devolver() {
+    public void devolver() {
         if(!getDisponible()) {
             setCantidadDisponible(getCantidadDisponible() + 1);
             setDisponible(true);
         } else {
             setCantidadDisponible(getCantidadDisponible() + 1);
         }
-        return true;
     }
 
     public String mostrarInfo() {

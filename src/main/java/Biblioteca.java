@@ -53,9 +53,10 @@ public class Biblioteca {
       }
     }
 
+    // problema cuando prestas libros y llegas hasta la cantidad de 0 libros.
     public boolean prestarLibro(String titulo) {
         Libro libro = this.buscarLibro(titulo);
-        if(libro != null && libro.getDisponible()) {
+        if(libro != null) {
             libro.prestar();
             return true;
         } else {
@@ -128,7 +129,7 @@ public class Biblioteca {
         }
         return null;
     }
-
+    // añadir el tolowercase.
     public Libro buscarLibro(String titulo) {
         for(Libro libro : this.libros) {
             if(libro.getTitulo().equals(titulo)) {
