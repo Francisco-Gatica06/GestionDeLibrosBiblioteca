@@ -19,36 +19,36 @@ public class Libro {
         return titulo;
     }
 
-    public String getAutor() {
-        return autor;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public String getISBN() {
-        return ISBN;
-    }
-
-    public int getCantidadDisponible() {
-        return cantidadDisponible;
-    }
-
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
     }
 
     public void setAutor(String autor) {
         this.autor = autor;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
     public void setGenero(String genero) {
         this.genero = genero;
     }
 
+    public String getISBN() {
+        return ISBN;
+    }
+
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
     }
 
     public void setCantidadDisponible(int cantidadDisponible) {
@@ -63,18 +63,29 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    public boolean prestar(String ISBN) {
-        boolean prestar = true;
-        if()
+    public boolean prestar() {
+        if(getDisponible()) {
+            setCantidadDisponible(getCantidadDisponible() - 1);
+            if (getCantidadDisponible() == 0) {
+                setDisponible(false);
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean devolver() {
+        if(!getDisponible()) {
+            setCantidadDisponible(getCantidadDisponible() + 1);
+            setDisponible(true);
+        } else {
+            setCantidadDisponible(getCantidadDisponible() + 1);
+        }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Titulo: "+this.titulo+"Autor: "+this.autor+"Genero: "+this.genero+"ISBN: "+this.ISBN +"Cantidad disponible: "+this.cantidadDisponible+"Disponible: "+this.disponible;
+    public String mostrarInfo() {
+        return "Titulo: "+this.titulo+" Autor: "+this.autor+" Genero: "+this.genero+" ISBN: "+this.ISBN +" Cantidad disponible: "+this.cantidadDisponible+" Disponible: "+this.disponible;
     }
-
 }
