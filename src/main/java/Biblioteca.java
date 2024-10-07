@@ -38,6 +38,9 @@ public class Biblioteca {
             Libro libro = new Libro(titulo,autor,genero,ISBN,cantidadDisponible,disponible);
             this.libros.add(libro);
             return true;
+        } else if (existeLibro(ISBN)) {
+            buscarLibroISBN(ISBN).aumentarCantidadDisponible();
+            return true;
         } else {
             return false;
         }
@@ -92,7 +95,7 @@ public class Biblioteca {
         }
     }
 
-    public List buscarLibroPorTitulo(String titulo) {
+    public List<Libro> buscarLibroPorTitulo(String titulo) {
         ArrayList<Libro> librosTitulo = new ArrayList<>();
         for(Libro libro : this.libros) {
             if(libro.getTitulo().equals(titulo)) {
@@ -102,7 +105,7 @@ public class Biblioteca {
         return librosTitulo;
     }
 
-    public List buscarLibroPorAutor(String autor) {
+    public List<Libro> buscarLibroPorAutor(String autor) {
         ArrayList<Libro> librosAutor = new ArrayList<>();
         for(Libro libro : this.libros) {
             if(libro.getAutor().equals(autor)) {
@@ -133,6 +136,15 @@ public class Biblioteca {
     public Libro buscarLibro(String titulo) {
         for(Libro libro : this.libros) {
             if(libro.getTitulo().equals(titulo)) {
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Libro buscarLibroISBN(String ISBN) {
+        for(Libro libro : this.libros) {
+            if(libro.getTitulo().equals(ISBN)) {
                 return libro;
             }
         }
