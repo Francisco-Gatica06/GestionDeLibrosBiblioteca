@@ -88,4 +88,5 @@ public class Libro {
     public String mostrarInfo() {
         return "Titulo: "+this.titulo+" Autor: "+this.autor+" Genero: "+this.genero+" ISBN: "+this.ISBN +" Cantidad disponible: "+this.cantidadDisponible+" Disponible: "+this.disponible;
     }
+
 }

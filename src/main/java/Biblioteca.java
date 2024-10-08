@@ -18,7 +18,6 @@ public class Biblioteca {
         this.nombre = nombre;
     }
 
-    // revisar probables errores con setDisponible.
     public boolean agregarLibro(Libro libro) {
         if(buscarLibro(libro.getISBN(), libro.getTitulo()) == null) {
             this.libros.add(libro);
@@ -32,7 +31,6 @@ public class Biblioteca {
         }
     }
 
-    // agregar si es que el libro que se agrega existe aumentarlo en 1.
     public boolean agregarLibro(String titulo, String autor, String genero, String ISBN, int cantidadDisponible, boolean disponible) {
         if(buscarLibro(ISBN, titulo) == null) {
             Libro libro = new Libro(titulo,autor,genero,ISBN,cantidadDisponible,disponible);
@@ -56,7 +54,6 @@ public class Biblioteca {
       }
     }
 
-    // problema cuando prestas libros y llegas hasta la cantidad de 0 libros.
     public boolean prestarLibro(String titulo) {
         Libro libro = this.buscarLibro(titulo);
         if(libro != null) {
@@ -132,7 +129,7 @@ public class Biblioteca {
         }
         return null;
     }
-    // añadir el tolowercase.
+
     public Libro buscarLibro(String titulo) {
         for(Libro libro : this.libros) {
             if(libro.getTitulo().equals(titulo)) {
